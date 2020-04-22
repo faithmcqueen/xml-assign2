@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- starting to define our users -->
+	<xs:element name="users">
+		<xs:complexType>
+			<!-- element users (user) -->
+			<xs:sequence>
+				<xs:element name="user" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="type" type="usertypes" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<!-- userID -->
+				<xs:element name="userid" type="xs:string" />
+				<!-- name (firstname, lastname) -->
+				<xs:element name="name">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="firstname" type="xs:string" />
+							<xs:element name="lastname" type="xs:string" />
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<!-- login details with regex - username, password -->
+				<xs:simpleType name="username">
+					<xs:restriction base="xs:string">
+						<xs:pattern value="\(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{6,15})$" />
+						<!-- regex pulled from RegexLib: http://regexlib.com/REDetails.aspx?regexp_id=515 --> 
+					</xs:restriction>
+				</xs:simpleType>
+				<xs:simpleType name="password">
+					<xs:restriction base="string">
+						<xs:pattern value="\^[a-zA-Z]\w{3,14}$" />
+						<!-- regex pulled from RegexLib: http://regexlib.com/REDetails.aspx?regexp_id=15 --> 
+					</xs:restriction>
+				</xs:simpleType>
+				<!-- closing the sequence, and element -->
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!-- declaring our usertypes to fill in our user attribute -->
+	<xs:simpleType name="usertypes">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="admin" />
+			<xs:enumeration value="client" />
+			<xs:enumeration value="vendor" />
+		</xs:restriction>
+	</xs:simpleType>
+<!-- end of schema -->
+</xs:schema>

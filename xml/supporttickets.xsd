@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<!-- starting to define our tickets -->
+	<xs:element name="tickets">
+		<xs:complexType>
+			<!-- element tickets (ticket) -->
+			<xs:sequence>
+				<xs:element name="ticket" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:attribute name="id" type="xs:positiveInteger" use="required" />
+					</xs:complexType>
+				</xs:element>
+				<!-- Date -->
+				<xs:element name="date" type="xs:date" />
+				<!-- Status -->
+				<xs:element name="status" type="status" />
+				<!-- userID -->
+				<xs:element name="userid" type="xs:string" />
+				<!-- Category -->
+				<xs:element name="category" type="categories" />
+				<!-- Subject -->
+				<xs:element name="subject" type="xs:string" />
+				<!--Messages -->
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="message">
+							<xs:complexType>
+								<xs:simpleContent>
+									<xs:extension base="xs:string">
+										<xs:attribute name="username" type="usernames" />
+									</xs:extension>
+								</xs:simpleContent>
+							</xs:complexType>
+						</xs:element>
+				<!-- Image/Screenshot upload -->
+				<xs:element name="image" minOccurs="0" maxOccurs="unbounded">
+	                <xs:complexType>
+	                  <xs:simpleContent>
+	                    <xs:extension base="xs:string">
+	                      <xs:attribute name="image" type="imgfiles" />
+	                      <xs:attribute name="description" type="xs:string" />
+	                    </xs:extension>
+	                  </xs:simpleContent>
+	                </xs:complexType>
+            	</xs:element>
+				<!-- closing the sequence, and element -->
+				</xs:sequence>
+			</xs:complexType>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+	<!-- declaring our status types to fill in our status element -->
+	<xs:simpleType name="status">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ongoing" />
+			<xs:enumeration value="resolved" />
+			<xs:enumeration value="unresolved" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- declaring our category types to fill in our category element -->
+	<xs:simpleType name="categories">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Purchasing Orders" />
+			<xs:enumeration value="Product Returns" />
+			<xs:enumeration value="Product Inquiry" />
+			<xs:enumeration value="Wholesale Inquiry" />
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Declaring our image file attributes - reference from class example books.xsd -->
+	<xs:simpleType name="imgfiles">
+	    <xs:restriction base="xs:string">
+	    	<xs:pattern value="[-_0-9A-Za-z]{3,}\.(jpg|png|gif|jpeg)" />
+	    </xs:restriction>
+    </xs:simpleType>
+<!-- end of schema -->
+</xs:schema>

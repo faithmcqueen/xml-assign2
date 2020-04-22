@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<users xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="users.xsd">
+	<user type="admin">
+		<userid>001</userid>
+		<name>
+			<firstname>Stephanie</firstname>
+			<lastname>Lee</lastname>
+		</name>
+		<username>adminuser1</username>
+		<password>@dminPass123</password>
+		<email>adminemail@example.com</email>
+	</user>
+	<user type="admin">
+		<userid>002</userid>
+		<name>
+			<firstname>Jane</firstname>
+			<lastname>Allen</lastname>
+		</name>
+		<username>supportstaff1</username>
+		<password>$upport900</password>
+		<email>supportemail@example.com</email>
+	</user>
+	<user type="client">
+		<userid>003</userid>
+		<name>
+			<firstname>Sheila</firstname>
+			<lastname>Johnson</lastname>
+		</name>
+		<username>exampleUser123</username>
+		<password>ex@mpl3pass</password>
+		<email>example@example.com</email>
+	</user>
+	<user type="client">
+		<userid>004</userid>
+		<name>
+			<firstname>Gerald</firstname>
+			<lastname>Kim</lastname>
+		</name>
+		<username>clientEmail003</username>
+		<password>12cl1ent</password>
+		<email>clientemail@example.com</email>
+	</user>
+</users>

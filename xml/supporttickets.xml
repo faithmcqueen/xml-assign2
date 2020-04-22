@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<tickets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="supporttickets.xsd">
+	<ticket>
+		<id>0001</id>
+		<date>January 15, 2020</date>
+		<status>Ongoing</status>
+		<userid>003</userid>
+		<category>Purchasing Orders</category>
+		<subject>Cannot fill out purchase order</subject>
+		<message usertype="client">Hello! When I try and fill out my purchase order and hit submit in order to place the order, the form disappears and nothing happens.</message>
+		<message usertype="admin">Hi there! Can you send along a screenshot of what you see when you submit the form so I can see in more detail what you are seeing?</message>
+		<image image="screenshot.jpg"></image>
+	</ticket>
+	<ticket>
+		<id>0002</id>
+		<date>February 1, 2020</date>
+		<status>Resolved</status>
+		<userid>004</userid>
+		<category>Product Returns</category>
+		<subject>Defective items in shipment</subject>
+		<message usertype="client">When my order arrived I saw that I had defective products in my shipment. I've attached an image here. Will I be able to get these replaced?</message>
+		<image image="defectiveproducts.jpg"></image>
+		<message usertype="admin">Of course. We will begin processing the defectiveitems as a return and refunding your account the cost of those items.</message>
+		<message usertype="client">Thank you! I will ship the defective items back.</message>
+		<message usertype="admin">Great. The return has been processed, when we receive the defective items the refund will be released to your account. Is there anything else I can help you with?</message>
+		<message usertype="client">That's everything, thank you!</message>
+	</ticket>
+</tickets>

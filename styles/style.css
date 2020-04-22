@@ -1,0 +1,26 @@
+.formwrap {
+    width: 50%;
+    padding: 2em;
+    margin: 0 auto;
+    background-color: #e3f2fd;
+}
+
+.ticket {
+    margin: 0 auto;
+    background-color: #e3f2fd;;
+    width: 75%;
+    margin-bottom: 1em;
+    margin-top: 1em;
+}
+
+.ticketcontent {
+    padding: 1em;
+}
+
+.pgwrap {
+    padding-top: 2em;
+}
+
+.pgtitle {
+    padding: 0.5em 0;
+}
